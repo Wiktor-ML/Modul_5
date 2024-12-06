@@ -9,7 +9,7 @@ class BaseContact:
         return f"Wybieram numer {self.phone_privat} i dzwonię do {self.first_name} {self.last_name}"
     
     @property
-    def length_of_full_name(self):
+    def label_length(self):
         return (len(self.first_name) + len(self.last_name))
     
     def __str__(self):
@@ -26,7 +26,7 @@ class BusinessContact(BaseContact):
         return f"Wybieram numer {self.phone_work} i dzwonię do {self.first_name} {self.last_name}"
        
     @property
-    def length_of_full_name(self):
+    def label_length(self):
         return (len(self.first_name) + len(self.last_name))
     
     def __str__(self):
@@ -48,6 +48,6 @@ def create_contacts(number_of_cards,card_type):
 for card in create_contacts(5,"base"):
     print(card)
     print(card.contact())
-    print(f"Dlugosc imienia i nazwiska: {card.length_of_full_name}")
+    print(f"Dlugosc imienia i nazwiska: {card.label_length}")
     print("-"*20)
 
